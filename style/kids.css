@@ -402,6 +402,7 @@ margin: auto;
   justify-content: space-between;
   background-color:rgb(0,0,0) ;
   color:rgb(255,255,255);
+  margin-top: -85px;
   }
 .border>h5{ 
    /* display: flex; */
@@ -492,28 +493,7 @@ margin: auto;
 .png{
   margin-top: 20px;
 }
-.line1{ 
- 
- border-right: 3px solid rgb(93,94,92);
- height: 20px;
- gap: 20px; 
- align-items: center; 
- margin-left: 3px;
- position: absolute;
- right: 200px;
- top: 30px;
-}
-.line2{ 
- 
- border-right: 3px solid rgb(93,94,92);
- height: 20px;
- gap: 20px; 
- align-items: center; 
- margin-left: 3px;
- position: absolute;
- right: 80px;
- top: 30px;
-}
+
 .png2{
   margin-top: 9px;
 
