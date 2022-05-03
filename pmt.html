@@ -1,190 +1,156 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <style>
-    .row {
-  display: -ms-flexbox; /* IE10 */
-  display: flex;
-  -ms-flex-wrap: wrap; /* IE10 */
-  flex-wrap: wrap;
-  margin: 0 -16px;
-}
+    <link rel="stylesheet" href="./style/pmt.css" />
+  </head>
+  <style>
+    /* *{
+font-family: sans-serif;
+} */
 
-.col-25 {
-  -ms-flex: 25%; /* IE10 */
-  flex: 25%;
-}
+  </style>
+  <body>
 
-.col-50 {
-  -ms-flex: 50%; /* IE10 */
-  flex: 50%;
-}
+    <!-- The Modal -->
+<div id="myModal" class="modal">
+  <!-- Modal content -->
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <p>Please Enter Correct Account Details</p>
+  </div>
 
-.col-75 {
-  -ms-flex: 75%; /* IE10 */
-  flex: 75%;
-}
+</div>
 
-.col-25,
-.col-50,
-.col-75 {
-  padding: 0 16px;
-}
+<div id="myModal1" class="modal">
+  <!-- Modal content -->
+  <div class="modal-content">
+    <!-- <span class="close">&times;</span> -->
+    <p> Your order was Successfully Placed</p>
+    <h4>Redirecting to The HomePage</h4>
+  </div>
 
-.container {
-  background-color:rgb(248, 244, 244);
-  background-image: url(https://th.bing.com/th/id/OIP.t0W2gQabxlHmXMDhuISQCQHaEo?pid=ImgDet&rs=1);
-  padding: 25px 20px 15px 20px;
-  border: 1px solid lightgrey;
-  border-radius: 3px;
-  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
-  width: 50%;
-  margin: auto;
-}
-body{
-           margin: 100px;
-           background-image: url(iwI8pV2C5ghR1O5pii5Zn4%3d&risl=&pid=ImgRaw&r=0);
-       }
+</div>
+<!-- modal finished -->
+<div id="head">
+  <!-- <img src="/img/Screenshot 2022-02-24 133853.png" /> -->
+  <span class="secure-message"
+    >You are using our secure server
+    <i class="os-icon os-icon-lock" style="vertical-align: top"></i
+  ></span>
+</div>
+<div id="contHead">
+   
+    <div id="fed">
+      <img src="https://ak1.ostkcdn.com/img/mxc/20170922_fedexLogo.png" />
+      <!-- copy -->
+      <div class="fedexCopy">
+        <p>
+          Secure checkout provided by FedEx International. <br />
+          Your order total includes customs and taxes, if applicable.
+        </p>
+        <!-- <img src="/img/uk.png" /> -->
+      </div>
+    </div>
+  </div>
+    <!-- paste -->
 
-input[type=text] {
-  width: 50%;
-  margin-bottom: 20px;
-  padding: 12px;
-  border: 1px solid #ccc;
-  border-radius: 3px;
-}
+    <div id="container">
+      <div id="payInfo">Payment Information</div>
 
-label {
-  margin-bottom: 10px;
-  display: block;
-}
+      <div id="imgCarts" style="width: 465px">
+        <img
+          src="https://ztransaction.bongous.com/static/css/images/pm/visa.png"
+          style="margin-right: 5px"
+        /><img
+          src="https://ztransaction.bongous.com/static/css/images/pm/mastercard.png"
+          style="margin-right: 5px"
+        /><img
+          src="https://ztransaction.bongous.com/static/css/images/pm/bitcoin.png"
+          style="margin-right: 5px"
+        />
+      </div>
 
-.icon-container {
-  margin-bottom: 20px;
-  padding: 7px 0;
-  font-size: 24px;
-}
-
-.btn,#btn1 {
-  background-color: #04AA6D;
-  color: white;
-  padding: 12px;
-  margin: 10px 0;
-  border: none;
-  width: 50%;
-  border-radius: 3px;
-  cursor: pointer;
-  font-size: 17px;
-}
-
-.btn:hover {
-  background-color: #45a049;
-}
-
-span.price {
-  float: right;
-  color: grey;
-}
-
-/* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other (and change the direction - make the "cart" column go on top) */
-@media (max-width: 800px) {
-  .row {
-    flex-direction: column-reverse;
-  }
-  .col-25 {
-    margin-bottom: 20px;
-  }
-  body{
-    margin: auto;
-  }
-  #imga{
-      margin-top: 200px;
-  }
-}
- 
-    </style>
-</head>
-<body>
-    <div class="row">
-        <div class="col-75">
-          <div class="container">
-            <form id="formtag">
-                <div ><img id="imga" src="//i1.lmsin.net/website_images/in/logos/logo-lifestyle.svg" width="113" height="25" alt="www.lifestylestores.com"></div>
-
-              <div class="row">
-                <div class="col-50">
-                  <h3>Billing Address</h3>
-                  <label for="fname"><i class="fa fa-user"></i> Full Name</label>
-                  <input type="text" id="fname" name="firstname" placeholder="Your Full Name">
-                  <label for="email"><i class="fa fa-envelope"></i> Email</label>
-                  <input type="text" id="email" name="email" placeholder="Enter your email address">
-                  <label for="adr"><i class="fa fa-address-card-o"></i> Address</label>
-                  <input type="text" id="adr" name="address" placeholder="Enter your address">
-                  <label for="city"><i class="fa fa-institution"></i> City</label>
-                  <input type="text" id="city" name="city" placeholder="city">
-               
-      
-                  <div class="row">
-                    <div class="col-50">
-                      <label for="state">State</label>
-                      <input type="text" id="state" name="state" placeholder="city">
-                    </div>
-                    <div class="col-50">
-                      <label for="zip">Zip</label>
-                      <input type="text" id="zip" name="zip" placeholder="">
-                    </div>
-                  </div>
-                </div>
-      
-                <div class="col-50">
-                  <h3>Payment Details</h3>
-                  <label for="fname"> We Accept Cards</label>
-                  <div class="icon-container">
-                    <i class="fa fa-cc-visa" style="color:navy;"></i>
-                    <i class="fa fa-cc-amex" style="color:blue;"></i>
-                    <i class="fa fa-cc-mastercard" style="color:red;"></i>
-                    <i class="fa fa-cc-discover" style="color:orange;"></i>
-                  </div>
-                  <label for="cname">Name on Card</label>
-                  <input type="text" id="cname" name="cardname" placeholder="Enter Name">
-                  <label for="ccnum">Credit card number</label>
-                  <input type="text" id="ccnum" name="cardnumber" placeholder="Enter 16 Digit Cardnumber">
-                  <label for="expmonth">Exp Month</label>
-                  <input type="text" id="expmonth" name="expmonth" placeholder="Month">
-      
-                  <div class="row">
-                    <div class="col-50">
-                      <label for="expyear">Exp Year</label>
-                      <input type="text" id="expyear" name="expyear" placeholder="Year">
-                    </div>
-                    <div class="col-50">
-                      <label for="cvv">CVV</label>
-                      <input type="text" id="cvv" name="cvv" placeholder="cvv">
-                    </div>
-                  </div>
-                </div>
-      
-              </div>
-              <label>
-                <input type="checkbox" checked="checked" name="sameadr"> Shipping address same as billing
-              </label>
-              <input type="submit" value="Pay Now" id="btn1" />
-            </form>
-          </div>
+      <div id="cardType">
+        <span>Card Type <span style="color: red">*</span> </span>
+        <select>
+          <option>Select..</option>
+          <option>Visa</option>
+          <option>MasterCard</option>
+          <option>BitCoin</option>
+          <option>Audi</option>
+        </select>
+      </div>
+      <form id="form">
+        <div class="cardType">
+          <span>Name on Card <span style="color: red">*</span></span>
+          <input
+            id="name"
+            type="text"
+            placeholder="Enter Card details"
+            value=""
+          />
         </div>
-      
-        
-      
-</body>
+        <div class="cardType">
+          <span>Card number<span style="color: red">*</span></span>
+          <input id="cardno" type="number" placeholder="Enter Card number" />
+        </div>
+        <div class="cardType">
+          <span id="scvv">CVV<span style="color: red">*</span></span>
+          <input type="text" id="cvv" placeholder="Enter CVV" />
+        </div>
+        <span id="makeP">Click to Make Payment </span>
+        <input type="submit" value="Make Payment" id=" makepayment" />
+      </form>
+    </div>
+   
+  
+    <!-- foototer strat -->
+   
+
+
+
+  </body>
 </html>
+
 <script>
- document.getElementById("btn1").addEventListener("click",redirect);
- function redirect() {
-   event.preventDefault();
-   window.location.href="otp.html";
- }
+  document.querySelector("#form").addEventListener("submit",myForm);
+function myForm(event){
+    event.preventDefault();
+    var cardName=document.querySelector("#name").value;
+    var cardNum=document.querySelector("#cardno").value;
+    var cV=document.querySelector("#cvv").value;
+    // console.log(cardName,cardNum,cV)
+// modal start
+var modal1 = document.getElementById("myModal1");
+var modal = document.getElementById("myModal");
+var span = document.getElementsByClassName("close")[0];
+
+// modal ended
+    if(cardName=="praful"&&cardNum==12345678912345&&cV==123)
+    {
+        let tID = setTimeout(function () {
+            window.location.href="index.html"
+            window.clearTimeout(tID);	// clear time out.
+        }, 2000);
+        modal1.style.display = "block";
+        // span.onclick = function() {
+        //     modal.style.display = "none";
+        //   }
+
+    }
+    else{
+ 
+       modal.style.display = "block";
+       span.onclick = function() {
+        modal.style.display = "none";
+      }
+      
+    }
+}
+
 </script>
+

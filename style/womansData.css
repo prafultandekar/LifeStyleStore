@@ -182,9 +182,9 @@ h1{
           
           
       }
-      #lifestyle>img{
-          height: 60px;
-          width: 190px;
+      #lifestyle img{
+          /* height: 60px; */
+          width: 150px
 
       }
       #box2{

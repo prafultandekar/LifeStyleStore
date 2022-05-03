@@ -444,6 +444,7 @@ var womensData = [
    console.log(cartArr);
    localStorage.setItem("cartItems", JSON.stringify(cartArr));
 
+   
 
   
    }
