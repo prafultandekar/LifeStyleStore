@@ -391,7 +391,7 @@ var womensData = [
     function displaydata(womensData){
     document.querySelector("#ProductItems").innerHTML = "";
   
-     womensData.map(function(el,index,array){
+     womensData.map(function(el){
      var Productdiv = document.createElement("div")
   
      var ProductImage = document.createElement("img")
@@ -433,6 +433,8 @@ var womensData = [
   
       
      });
+
+     
   
    function cartdata(el){
 
@@ -441,6 +443,8 @@ var womensData = [
    cartArr.push(el);
    console.log(cartArr);
    localStorage.setItem("cartItems", JSON.stringify(cartArr));
+
+
   
    }
   
