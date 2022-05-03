@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+</head>
+<style>
+    #cart {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-template-rows: repeat(auto, 300px);
+      grid-gap: 10px;
+    }
+    img {
+      /* width: 100%; */
+      border-radius: 10px;
+    }
+    h2 {
+      text-align: right;
+    }
+  </style>
+<body>
+    <h2 id="h2"></h2>
+    <h2 id="h22"></h2>
+    <div id="cart"></div>
+</body>
+</html>
+<script>
+
+
+let data = JSON.parse(localStorage.getItem("cartItems")) ||[]
+
+appendData(data)
+
+document.getElementById("h2").innerText=`Total Items: ${data.length}`
+total();
+function total() {
+    let sum = 0;
+    for (let i = 0; i < data.length; i++) {
+      sum += data[i].price * data[i].quant;
+    }
+    console.log(sum);
+    document.getElementById("h22").innerText = `Total Value : ₹${sum}`;
+  }
+// console.log(data)
+
+let container = document.getElementById("cart")
+
+function appendData(data)
+{
+data.forEach(function(el,index){
+
+    var container = document.getElementById("cart")
+
+    let div = document.createElement("div")
+
+    let imgD = document.createElement("div")
+
+    let image = document.createElement("img")
+    image.setAttribute("src",el.img)
+
+    imgD.append(image)
+
+
+   let price = document.createElement("p")
+   price.innerText = el.price
+
+   let name= document.createElement("p")
+   name.innerText=el.name
+
+   let btn = document.createElement("button");
+      btn.addEventListener("click", function () {
+        remove(el, index);
+      });
+
+      btn.innerText = "Remove From Cart";
+
+      let increase = document.createElement("button");
+      increase.addEventListener("click", function () {
+        inc(el, index);
+      });
+
+      increase.innerText = "increse the Quantity";
+
+      let decrease = document.createElement("button");
+      decrease.addEventListener("click", function () {
+        dec(el, index);
+      });
+
+      decrease.innerText = "decrese the Quantity";
+
+    div.append(imgD,price,name,btn,increase,decrease)
+
+    container.append(div)
+
+
+})
+}
+ 
+
+
+//  function add(el,index){
+// container.innerHTML ="";
+// data.splice(index,1)
+// console.log(data)
+// localStorage.setItem("add",JSON.stringify(data))
+// appendData(data)
+// document.getElementById("h2").innerText = `Total Items : ${data.length}`;
+// total()
+
+// }
+
+function remove(el, index) {
+    container.innerHTML = "";
+    data.splice(index, 1);
+    //   console.log('data:', data)
+    localStorage.setItem("Cart", JSON.stringify(data));
+   appendData(data)
+    document.getElementById("h2").innerText = `Total Items : ${data.length}`;
+
+    total();
+  }
+
+  function inc(el, index) {
+    container.innerHTML = "";
+    data[index].quant++;
+    localStorage.setItem("Cart", JSON.stringify(data));
+   appendData(data)
+    total();
+  }
+
+  function dec(el, index) {
+    container.innerHTML = "";
+    data[index].quant--;
+    localStorage.setItem("Cart", JSON.stringify(data));
+   appendData(data)
+    total();
+  }
+
+
+</script>

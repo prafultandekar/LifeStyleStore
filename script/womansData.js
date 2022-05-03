@@ -391,23 +391,23 @@ var womensData = [
     function displaydata(womensData){
     document.querySelector("#ProductItems").innerHTML = "";
   
-     womensData.map(function(elem,index,array){
+     womensData.map(function(el,index,array){
      var Productdiv = document.createElement("div")
   
      var ProductImage = document.createElement("img")
-     ProductImage.setAttribute("src" , elem.img)
+     ProductImage.setAttribute("src" , el.img)
      ProductImage.setAttribute("class" , "ProductImage")
   
      var Price = document.createElement("h3")
-     Price.innerText = `₹ ${elem.price}`;
+     Price.innerText = `₹ ${el.price}`;
      Price.setAttribute("class" , "Price");
   
      var StrikeOfPrice = document.createElement("p");
-     StrikeOfPrice.innerText = elem.strikePrice;
+     StrikeOfPrice.innerText = el.strikePrice;
      StrikeOfPrice.setAttribute("class" , "StrikeOfPrice");
   
      var Product = document.createElement("h4");
-     Product.innerText = elem.name;
+     Product.innerText = el.name;
      Product.setAttribute( "class" , "Product");
   
      var PriceDiv = document.createElement("div")
@@ -421,7 +421,7 @@ var womensData = [
      button.innerText = "Add to Cart";
      button.setAttribute("class" , "Basketbutton")
      button.addEventListener("click" , function(){
-     cartdata(elem);
+     cartdata(el);
     });
     PriceDiv.append(Price,StrikeOfPrice)
   
@@ -434,10 +434,11 @@ var womensData = [
       
      });
   
-   function cartdata(elem){
-   console.log(elem);
-   elem.quantity = 1;
-   cartArr.push(elem);
+   function cartdata(el){
+
+   console.log(el);
+   el.quant = 1;
+   cartArr.push(el);
    console.log(cartArr);
    localStorage.setItem("cartItems", JSON.stringify(cartArr));
   
