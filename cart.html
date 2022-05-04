@@ -454,8 +454,8 @@ let data = JSON.parse(localStorage.getItem("cartItems")) ||[]
 appendData(data)
 
 document.getElementById("h2").innerText=`Total Items: ${data.length}`
-total();
-function total() {
+total(data);
+function total(data) {
     let sum = 0;
     for (let i = 0; i < data.length; i++) {
       sum += Number(data[i].price) * Number(data[i].quant);
@@ -492,6 +492,7 @@ data.forEach(function(el,index){
    name.innerText=el.name
 
    let btn = document.createElement("button");
+   btn.id = "btn"
       btn.addEventListener("click", function () {
         remove(el, index);
       });
@@ -499,6 +500,7 @@ data.forEach(function(el,index){
       btn.innerText = "Remove From Cart";
 
       let increase = document.createElement("button");
+      increase.id="inc"
       increase.addEventListener("click", function () {
         inc(el, index);
       });
@@ -506,6 +508,7 @@ data.forEach(function(el,index){
       increase.innerText = "increse the Quantity";
 
       let decrease = document.createElement("button");
+      decrease.id="dec"
       decrease.addEventListener("click", function () {
         dec(el, index);
       });
@@ -540,8 +543,9 @@ function remove(el, index) {
     localStorage.setItem("Cart", JSON.stringify(data));
    appendData(data)
     document.getElementById("h2").innerText = `Total Items : ${data.length}`;
+    
 
-    total();
+    total(data);
   }
 
   function inc(el, index) {
@@ -549,7 +553,7 @@ function remove(el, index) {
     data[index].quant++;
     localStorage.setItem("Cart", JSON.stringify(data));
    appendData(data)
-    total();
+    total(data);
   }
 
   function dec(el, index) {
@@ -557,8 +561,12 @@ function remove(el, index) {
     data[index].quant--;
     localStorage.setItem("Cart", JSON.stringify(data));
    appendData(data)
-    total();
+    total(data);
+    
   }
 
 
+function p(){
+window.location.href="./productdetails.html"
+}
 </script>

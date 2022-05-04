@@ -488,3 +488,25 @@ font-weight: lighter;
     gap: 20px;
     padding: 30px;
 }
+
+#inc:hover{
+  height: 50px;
+  background-color: teal;
+  border:  1px solid red;
+  justify-content: space-around;
+ 
+  
+}
+#dec:hover{
+  color: white;
+  height: 50px;
+background-color:black;
+border:  1px solid red;
+justify-content: right
+}
+#btn:hover{
+  height: 50px;
+background-color: teal;
+border:  1px solid red;
+justify-content: right
+}

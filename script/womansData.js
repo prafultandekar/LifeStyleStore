@@ -422,6 +422,7 @@ var womensData = [
      button.setAttribute("class" , "Basketbutton")
      button.addEventListener("click" , function(){
      cartdata(el);
+     window.location.href = "./productdetails.html"
     });
     PriceDiv.append(Price,StrikeOfPrice)
   
