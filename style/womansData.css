@@ -24,6 +24,8 @@ h1{
   }
 
   .products > div > div a img{
+    /* -webkit-transform: scaleX(-1);
+    transform: scaleX(-1); */
     height: 50px;
     width: 50px;
   }
@@ -36,6 +38,7 @@ h1{
   }
 
   .products > div:hover{
+    
     border: 1px solid goldenrod;
     color: goldenrod;
   }
@@ -81,16 +84,36 @@ h1{
     grid-template-columns: repeat(4,1fr);
     grid-template-rows: repeat(12,1fr);
     gap: 10px;
+    /* margin-top: -30px; */
   }
-
-  .ProductImage{
+ #ProductItems img:hover{
+    border: 1px solid red;
     height: 400px;
-    width: 290px;
+    width: 300px;
+    -webkit-transform: scaleX(-1);
+    transform: scaleX(-1);
+    margin: -30px;
 
   }
+  
+  .ProductImage{
+  
+    height: 350px;
+    width: 290px;
+    /* -webkit-transform: scaleX(-1);
+    transform: scaleX(-1); */
+
+  }
+  /* .ProductImage :hover{
+       -webkit-transform: scaleX(-1);
+    transform: scaleX(-1);
+    height: 50px;
+  } */
 
   .PriceDiv{
     display: flex;
+    /* border: 1px solid red; */
+    /* width: 30%; */
   }
 
   .StrikeOfPrice{
@@ -144,13 +167,13 @@ h1{
 
   .Basketbutton {
     width: 100%;
-    height: 50px;
+    height: 70px;
     background-color: goldenrod;
     color: white;
     font-size: 16px;
     border: 0px;
     border-radius: 10px;
-    margin-top: 15px;
+    margin-top: -150px;
     margin-bottom: 30px;
   }
 

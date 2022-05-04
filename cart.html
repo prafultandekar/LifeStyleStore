@@ -458,7 +458,7 @@ total();
 function total() {
     let sum = 0;
     for (let i = 0; i < data.length; i++) {
-      sum += data[i].price * data[i].quant;
+      sum += Number(data[i].price) * Number(data[i].quant);
     }
     console.log(sum);
     document.getElementById("h22").innerText = `Total Value : ₹${sum}`;

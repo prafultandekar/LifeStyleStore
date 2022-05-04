@@ -11,9 +11,14 @@
             grid-template-rows: repeat(auto, 300px);
             grid-gap: 10px;
           }
-          img {
+          img:hover{
+            
+               -webkit-transform: scaleX(-1);
+    transform: scaleX(-1);
+    
             /* width: 100%; */
             border-radius: 10px;
+            border: 1px solid red;
           }
           h2 {
             text-align: right;
